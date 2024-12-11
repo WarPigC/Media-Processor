@@ -17,6 +17,8 @@ import java.io.IOException;
 
 public class VideoController {
 
+    String ffmpeg= "org/project/ffmpeg_exec/ffmpegEssentials/bin/ffmpeg.exe";
+
     @FXML
     private Button backToMain,openFile,startProcess;
 
