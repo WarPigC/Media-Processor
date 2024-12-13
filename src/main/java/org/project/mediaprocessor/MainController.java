@@ -39,17 +39,4 @@ public class MainController {
         stage.setScene(scene);
         stage.show();
     }
-
-//    public void SwitchScenToMain(ActionEvent event) throws IOException{
-//        root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
-//        stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-//
-//        scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.show();
-//    }
-    public void SwitchSceneCompletion(ActionEvent event) throws IOException{
-
-    }
-
 }

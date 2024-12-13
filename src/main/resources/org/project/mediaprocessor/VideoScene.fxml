@@ -3,7 +3,7 @@
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Spinner?>
@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="548.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.project.mediaprocessor.VideoController">
+<AnchorPane prefHeight="548.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.project.mediaprocessor.VideoController">
    <children>
       <TextField fx:id="inputFile" editable="false" layoutX="27.0" layoutY="153.0" prefHeight="25.0" prefWidth="291.0" promptText="Input File Address" />
       <Label alignment="CENTER" layoutX="179.0" layoutY="61.0" text="Video Manipulation" textAlignment="CENTER">
@@ -24,23 +23,24 @@
       <Label layoutX="133.0" layoutY="432.0" text="Bitrate" />
       <Label layoutX="100.0" layoutY="245.0" text="Maximum File Size" />
       <TextField fx:id="maxSize" layoutX="75.0" layoutY="272.0" promptText="Optional" />
-      <TextField fx:id="outputFile" layoutX="380.0" layoutY="153.0" prefHeight="25.0" prefWidth="189.0" promptText="Output file directory" />
-      <Button fx:id="startProcess" layoutX="438.0" layoutY="192.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="GO" />
-      <Button fx:id="openFile" layoutX="129.0" layoutY="192.0" mnemonicParsing="false" text="Open File" />
-      <Button fx:id="backToMain" layoutX="21.0" layoutY="35.0" mnemonicParsing="false" onAction="#SwitchSceneToMain" prefHeight="25.0" prefWidth="112.0" text="← Back to Home" />
+      <TextField fx:id="outputFile" layoutX="347.0" layoutY="153.0" prefHeight="25.0" prefWidth="269.0" promptText="Output file name/directory" />
+      <Button fx:id="startProcess" layoutX="437.0" layoutY="192.0" mnemonicParsing="false" onAction="#Go" prefHeight="25.0" prefWidth="80.0" text="GO" />
+      <Button fx:id="openFile" layoutX="129.0" layoutY="192.0" mnemonicParsing="false" onAction="#fileInput" text="Open File" />
+      <Button fx:id="backToMain" layoutX="21.0" layoutY="35.0" mnemonicParsing="false" onAction="#SwitchSceneToMain" prefHeight="25.0" prefWidth="112.0" text="Back to Home" />
       <Spinner fx:id="spinner" layoutX="76.0" layoutY="358.0" />
       <Label layoutX="67.0" layoutY="340.0" text="Constant Rate Factor (5-51)" textAlignment="CENTER" />
-      <Label layoutX="28.0" layoutY="498.0" opacity="0.36" prefWidth="269.0" text="Non-recommended CRF's alternate. Unit: KB/s" textAlignment="CENTER" textFill="#e02323" wrapText="true" />
+      <Label layoutX="28.0" layoutY="498.0" opacity="0.36" prefWidth="269.0" text="Non-recommended CRF's alternate. Unit: Kb/s" textAlignment="CENTER" textFill="#e02323" wrapText="true" />
       <Label layoutX="48.0" layoutY="382.0" opacity="0.36" text="Lower CRF gives more quality and file size! " textAlignment="CENTER" textFill="RED" />
-      <ComboBox layoutX="419.0" layoutY="285.0" prefHeight="26.0" prefWidth="93.0" promptText="Auto" AnchorPane.bottomAnchor="237.0" AnchorPane.leftAnchor="419.0" AnchorPane.rightAnchor="126.0" AnchorPane.topAnchor="285.0" />
       <Label layoutX="415.0" layoutY="263.0" text="Output File Format" />
-      <CheckBox layoutX="431.0" layoutY="349.0" mnemonicParsing="false" text="Extract Audio" />
+      <CheckBox fx:id="extractAudio" layoutX="431.0" layoutY="349.0" mnemonicParsing="false" onAction="#audioExtraction" text="Extract Audio" />
       <Label layoutX="408.0" layoutY="371.0" opacity="0.37" prefHeight="40.0" prefWidth="145.0" text="Will create a copy of audio file in destination directory " wrapText="true" />
       <Label layoutX="443.0" layoutY="432.0" text="Speed Preset" />
       <Label layoutX="403.0" layoutY="487.0" opacity="0.35" prefHeight="40.0" prefWidth="150.0" text="Speeding up the process may deter quality!" textAlignment="CENTER" textFill="RED" wrapText="true" />
-      <ComboBox layoutX="406.0" layoutY="456.0" prefWidth="150.0" promptText="preset" />
       <Accordion layoutX="212.0" layoutY="273.0" />
       <Separator layoutY="229.0" prefHeight="17.0" prefWidth="638.0" />
       <Separator layoutX="316.0" layoutY="236.0" orientation="VERTICAL" prefHeight="312.0" prefWidth="22.0" />
+      <Label layoutX="126.0" layoutY="302.0" opacity="0.36" text="Unit: Mb" />
+      <ChoiceBox fx:id="format" layoutX="404.0" layoutY="284.0" prefHeight="25.0" prefWidth="106.0" />
+      <ChoiceBox fx:id="preset" layoutX="409.0" layoutY="455.0" prefHeight="25.0" prefWidth="106.0" />
    </children>
 </AnchorPane>
